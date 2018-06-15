@@ -1,18 +1,21 @@
 .text
 .globl main
 main:
-	lb $a0, $caracter
-	li $v0, 1
-	syscall
-	li $v0, 11
-	syscall
-	jal converte
+	li $a1,0      #carrega uma variavel?
+	lb $a2,$tam  #carrega o tamanho da string
+	jal converte_sequencia
 	li $v0, 10
 	syscall
-converte_sequencia:   #função que converte uma sequencia de caracteres
-
 imprime_sequencia:   #função que imprime uma sequencia de caracteres
-
+	
+converte_sequencia:   #função que converte uma sequencia de caracteres
+	lb $t2,$sequencia($a1)
+	move $a0, $t2
+	addi $a1,$a1,1
+	li $v0, 11    #carrega para print char
+	syscall
+	blt $a1,$a2, converte_sequencia
+	j converte_retorno
 converte:  #função que converte um único caracter
 	#sgeu $t0, $a0, 65
 	#sleu $t1, $a0, 90
@@ -38,6 +41,5 @@ letra_minuscula:
 letra_maiuscula:
 
 .data
-$caracter: .byte 'a'
 $tam: .word 13
 $sequencia: .asciiz "C0Nv3eRS 4Ao"
