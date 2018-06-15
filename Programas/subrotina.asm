@@ -1,4 +1,5 @@
 #pilha cresce diminuindo e somando ela diminui
+#SUBROTINA
 .text
 .globl main
 main:

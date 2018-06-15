@@ -1,9 +1,10 @@
+#Inteiro
 .text
 .globl main
 main:
 	ld $a0,$valor    #carrega double
 	addi $a0,$a0,20    #add imediato
-	li $v0,1   #imprime o endereço em $a0
+	li $v0,1   #imprime o endereï¿½o em $a0
 	syscall
 	li $v0,10    #termina
 	syscall

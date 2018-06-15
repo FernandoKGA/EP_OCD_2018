@@ -25,9 +25,6 @@ minuscula:
 	li $v0, 10
 	syscall
 	
-	
-	
-	
 .data
 $caracter:
         .byte 'a'
