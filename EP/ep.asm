@@ -45,7 +45,7 @@ converte_retorno:
 	jr $ra
 	
 printa_caracter:
-	bne $t2, 1, printa_carac_retorno #se nao for letra, ja retorna sem printar
+	beq $t2, 2, printa_carac_retorno #se nao for letra ou numero, ja retorna sem printar
 	li $v0, 11   #printa caracter
 	syscall
 	j printa_carac_retorno
