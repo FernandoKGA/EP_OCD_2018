@@ -74,7 +74,7 @@ void converte(char ch, int *tipo, char *valor){
     }
 }
 
-void converte(char ch, int *tipo, char *valor){
+void converte_2(char ch, int *tipo, char *valor){
     //converte de char para inteiro
     int c = (int) ch;
     //garante que valor receba o valor de ch
@@ -112,7 +112,7 @@ void imprimeSequencia(char array[]){
     int tipo;
     char valor;
     for(int i=0 ;i < n; i++){
-        converte_2(array[i],&tipo,&valor);  //Converte
+        converte(array[i],&tipo,&valor);  //Converte
         if(tipo == 1 || tipo == 0){  //Se for letra, imprime (ja convertido)
             printf("%c",valor);
         }
